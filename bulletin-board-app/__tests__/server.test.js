@@ -1,10 +1,10 @@
 /*Performance Patterns*/
 
-const app1 = require("../server");
+const app = require("../server");
 
 var timeBefore = new Date();
 var timeBefore_ms = timeBefore.getMilliseconds();
-app1;
+app;
 var timeAfter = new Date();
 var timeAfter_ms = timeAfter.getMilliseconds();
 var the_time_of_loading_the_app = timeAfter_ms - timeBefore_ms;
@@ -25,7 +25,7 @@ test("Testing the time of loading the app", () => {
 
 /*Process Patterns*/
 
-var app2 = require('../backend/index');
+var app2 = require('../backend/index.js');
 
 test("Testing the process for index", () => {
     expect(app2.index).toBe(app2.index);

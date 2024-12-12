@@ -1,6 +1,6 @@
 /*Initial general test*/
 
-const events_json = require("../backend/events");
+const events_json = require("../backend/events.js");
 
 test("there are three events", () => {
     expect(events_json.length).toBe(3);
@@ -11,7 +11,7 @@ test("there are three events", () => {
 
 /*Pass/Fail Patterns*/
 
-const events_json2 = require("../backend/events");
+const events_json2 = require("../backend/events.js");
 
 test("Here is the title of the event with id 1", () => {
     expect(events_json2[0].title).toBe('Docker Workshop');
@@ -30,7 +30,7 @@ test("Here is the title of the event with id 3", () => {
 
 /*Data Driven Test Patterns*/
 
-const events_json3 = require("../backend/events");
+const events_json3 = require("../backend/events.js");
 
 //const date_in_msec = Date.parse(events_json[0].date);
 
@@ -50,7 +50,7 @@ test("Here is the date in milliseconds of the event with id 1", () => {
 
 /*Collection Management Patterns*/
 
-const events_json4 = require("../backend/events");
+const events_json4 = require("../backend/events.js");
 
 test("The first event has id 1", () => {
     expect(events_json4[0].id).toBe(1);
@@ -81,7 +81,7 @@ test("The third event has id 3", () => {
 /*Simulation Patterns*/
 
 const app = require("../server");
-
+const api = require("../backend/api.js");
 
 
 test("Posting and event", () => {
@@ -98,15 +98,15 @@ test("Posting and event", () => {
 
 /*Stress-Test Patterns*/
 
-const app3 = require("../server");
-const api = require("../backend/api");
+const app2 = require("../server");
+const api2 = require("../backend/api.js");
 
 for(let i=0; i < 1000000; i++){
-    app3.post('/api/events', api.event);
+    app2.post('/api/events', api2.event);
 }
 
 test("Let's see if it orks well after posting 1000000 events", () => {
-    expect(app3.get('/api/events', api.events)).toBe(app3.get('/api/events', api.events));
+    expect(app2.get('/api/events', api2.events)).toBe(app2.get('/api/events', api2.events));
 });
 
 
