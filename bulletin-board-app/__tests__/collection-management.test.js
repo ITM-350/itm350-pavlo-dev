@@ -1,4 +1,6 @@
-const events_json4 = require("../backend/events");
+/*Collection Management Patterns*/
+
+const events_json4 = require("../backend/events.js");
 
 test("The first event has id 1", () => {
     expect(events_json4[0].id).toBe(1);

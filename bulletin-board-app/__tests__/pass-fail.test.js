@@ -1,4 +1,6 @@
-const events_json2 = require("../backend/events");
+/*Pass/Fail Patterns*/
+
+const events_json2 = require("../backend/events.js");
 
 test("Here is the title of the event with id 1", () => {
     expect(events_json2[0].title).toBe('Docker Workshop');
