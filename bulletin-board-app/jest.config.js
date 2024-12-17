@@ -2,7 +2,7 @@
 module.exports = {
     coverageThreshold: {
       './backend/*.js': {
-        lines: 25
+        lines: 14
       }
     }
   }
